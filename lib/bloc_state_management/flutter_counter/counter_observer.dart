@@ -1,19 +1,20 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 
-
 /// {@template counter_observer}
 /// [BlocObserver] for the counter application which
 /// observes all state changes.
 /// {@endtemplate}
 class CounterObserver extends BlocObserver {
+
+  // {@macro counter_observer}
   const CounterObserver();
 
   @override
-  void onChange(BlocBase<dynamic> bloc, Change<dynamic> change) {
+  void onChange(BlocBase bloc, Change change) {
     super.onChange(bloc, change);
     if (kDebugMode) {
-      print('Bloc: ${bloc.runtimeType}, Change: $change');
+      print('${bloc.runtimeType} $change');
     }
   }
 }
